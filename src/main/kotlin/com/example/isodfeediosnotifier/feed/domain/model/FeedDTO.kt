@@ -1,4 +1,4 @@
-package com.example.isodfeediosnotifier.feed.core.model
+package com.example.isodfeediosnotifier.feed.domain.model
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
