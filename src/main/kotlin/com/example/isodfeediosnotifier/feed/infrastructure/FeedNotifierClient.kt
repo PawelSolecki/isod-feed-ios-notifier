@@ -1,6 +1,5 @@
 package com.example.isodfeediosnotifier.feed.infrastructure
 
-import lombok.extern.slf4j.Slf4j
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpHeaders
@@ -8,7 +7,6 @@ import org.springframework.http.HttpMethod
 import org.springframework.http.MediaType
 import org.springframework.web.client.RestTemplate
 
-@Slf4j
 class FeedNotifierClient(
     private val restTemplate: RestTemplate
 ) {
