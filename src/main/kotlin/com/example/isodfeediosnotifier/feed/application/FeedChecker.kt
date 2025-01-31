@@ -2,9 +2,9 @@ package com.example.isodfeediosnotifier.feed.application
 
 import com.example.isodfeediosnotifier.feed.core.port.FeedService
 import jakarta.annotation.PostConstruct
-import org.springframework.stereotype.Component
+import org.springframework.stereotype.Service
 
-@Component
+@Service
 class FeedChecker(private val feedService: FeedService) {
 
     @PostConstruct
@@ -12,6 +12,4 @@ class FeedChecker(private val feedService: FeedService) {
         feedService.startChecking()
 
     }
-
-
 }

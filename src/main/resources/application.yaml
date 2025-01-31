@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: isod-feed-ios-notifier
+
+isod-api-key: hMkIOHwqP7kKXHuAG3hug
+isod-username: pawel.solecki
+
+pushcat-api-key: agXqYgOtkiE4-vw6e37V6wNK
+pushcat-notification-name: Isod
