@@ -16,23 +16,17 @@ import java.time.format.DateTimeFormatter
 import java.util.concurrent.TimeUnit
 
 class FeedFacade(private val restTemplate: RestTemplate) : FeedService {
-    @Value("\${isod-api-key}")
-    lateinit var isodApiKey: String
 
-    @Value("\${isod-username}")
-    lateinit var isodUsername: String
 
-    @Value("\${pushcat-api-key}")
+    @Value("\${pushcut.api-key}")
     lateinit var pushcutApiKey: String
 
-    @Value("\${pushcat-notification-name}")
-    lateinit var pushcutNotificationName: String
+    @Value("\${pushcut.url}")
+    lateinit var pushcutUrl: String
 
-    private val isodUrl: String
-        get() = "http://isod.ee.pw.edu.pl/isod-portal/wapi?q=mynewsfull&username=${isodUsername}&apikey=${isodApiKey}"
+    @Value("\${isod.url}")
+    lateinit var isodUrl: String
 
-    private val pushcutUrl: String
-        get() = "https://api.pushcut.io/v1/notifications/${pushcutNotificationName}"
 
     override fun startChecking() {
         Thread {
@@ -85,13 +79,6 @@ class FeedFacade(private val restTemplate: RestTemplate) : FeedService {
             contentType = MediaType.APPLICATION_JSON
             set("API-Key", pushcutApiKey)
         }
-
-//        val requestBody = mapOf(
-//            "title" to lastProcessedFeed?.subject,
-//            "text" to lastProcessedFeed?.content,
-//            "image" to "https://isod.ee.pw.edu.pl/isod-stud/img/logo_small_ee.png",
-//
-//        )
         val requestBody = null
 
         val requestEntity = HttpEntity(requestBody, headers)

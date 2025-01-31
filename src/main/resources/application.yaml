@@ -2,8 +2,13 @@ spring:
   application:
     name: isod-feed-ios-notifier
 
-isod-api-key: hMkIOHwqP7kKXHuAG3hug
-isod-username: pawel.solecki
+isod:
+  api-key: ${ISOD_API_KEY}
+  username: ${ISOD_USERNAME}
+  url: http://isod.ee.pw.edu.pl/isod-portal/wapi?q=mynewsfull&username=${isod.username}&apikey=${isod.api-key}
 
-pushcat-api-key: agXqYgOtkiE4-vw6e37V6wNK
-pushcat-notification-name: Isod
+pushcut:
+  api-key: ${PUSHCUT_API_KEY}
+  notification-name: ${PUSHCUT_NAME}
+  url: https://api.pushcut.io/v1/notifications/${pushcut.notification-name}
+
