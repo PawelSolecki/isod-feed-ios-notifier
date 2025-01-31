@@ -5,7 +5,7 @@ import jakarta.annotation.PostConstruct
 import org.springframework.stereotype.Component
 
 @Component
-class FeedChecker(private final val feedService: FeedService) {
+class FeedChecker(private val feedService: FeedService) {
 
     @PostConstruct
     fun startChecking() {
