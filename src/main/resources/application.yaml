@@ -12,6 +12,6 @@ pushcut:
   notification-name: ${PUSHCUT_NAME}
   url: https://api.pushcut.io/v1/notifications/${pushcut.notification-name}
 
-check-interval: 5000
+check-interval: 60000
 
-custom-notification: false
+custom-notification: true

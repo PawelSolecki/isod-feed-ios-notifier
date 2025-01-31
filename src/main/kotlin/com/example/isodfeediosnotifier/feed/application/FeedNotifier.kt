@@ -11,7 +11,6 @@ class FeedNotifier(
     fun sendNotification(latestFeed: FeedDTO) {
         val requestBody = mapOf(
             "title" to latestFeed.subject,
-            "text" to latestFeed.content,
             "image" to "https://isod.ee.pw.edu.pl/isod-stud/img/logo_small_ee.png",
 
         )
